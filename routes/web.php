@@ -19,4 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('wali', 'WaliKelasController');
+Route::get('/card', 'CardController@index')->name('card.index');
+Route::get('/card/cardList', 'CardController@getCardList')->name('card.list');
+Route::post('/card/store', 'CardController@store')->name('card.store');
+Route::get('/card/delete/{id}', 'CardController@destroy')->name('card.destroy');
+Route::get('/card/edit/{id}', 'CardController@edit')->name('card.edit');
+Route::post('/card/update/{id}', 'CardController@update')->name('card.update');
